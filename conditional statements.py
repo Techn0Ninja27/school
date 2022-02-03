@@ -1,3 +1,4 @@
+# 1 & 2
 def ageCompare():
     '''compares two different ages'''
     loopFinish = False #check for user error

@@ -1,10 +1,11 @@
+# 1
 def loopMessage(message, count):
     '''loops printing a message'''
     for n in range(1, count, 1): #loop
         print(message)
 
 
-
+# 2
 def userLoop():
     loopFinish = False #checks for user error
     while loopFinish == False: #looped until no error
@@ -19,6 +20,7 @@ def userLoop():
             #if no error, breaks loop
             loopFinish = True
 
+# 3
 def timestable():
     '''timestable generator'''
     loopFinish = False #user error prevention

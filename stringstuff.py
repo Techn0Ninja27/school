@@ -1,3 +1,4 @@
+# 1
 def stringCutter(string):
     '''cuts string to 3 characters long'''
     if len(string) <= 3: #check length of sting
@@ -9,6 +10,7 @@ def stringCutter(string):
 string = "less goo!" #dababy
 print(stringCutter(string))
 
+# 2
 def stringUpper(string):
     '''if 2 of first 4 characters are uppercase, return entire string uppercase'''
     firstChars = [] #opens list
@@ -28,7 +30,7 @@ def stringUpper(string):
 
 print(stringUpper(string))
 
-
+# 3
 def caesarCipher(string, shift):
     '''simple caesar cipher'''
     result = "" #creates string for storing encrypted output
@@ -57,6 +59,7 @@ def caesarCipher(string, shift):
             result += chr((ord(char) + shift - 97) % 26 + 97)
     return result
 
+# 3
 def caesarDecipher(string, shift):
     '''decoder for caesar cipher'''
     decodeShift = 26 - shift # creates shift to reshift a full cycle
@@ -69,6 +72,7 @@ decode = caesarDecipher(encode, shift)
 print(encode, "shift:", shift, decode)
 
 
+# 4
 def countRepeat(string):
     '''counts repeated characters in a string, returns dictionary'''
     chars = {} # opens dictionary to store characters
@@ -91,6 +95,7 @@ def countRepeat(string):
 
 countRepeat(string)
 
+# 5
 def strToList(string):
     '''converts string to list'''
     list = [] # opens list

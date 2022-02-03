@@ -1,3 +1,5 @@
+# honestly idk how this is lesson 1 but it might help
+
 def eqInput(message):
     """creates input for float value, added message required"""
     inputted = float(input(message))
