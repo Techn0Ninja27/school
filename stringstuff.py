@@ -15,8 +15,8 @@ def stringUpper(string):
     for i in range(0,4):
         firstChars.append(string[i]) #appends first 4 characters to list
     amountUppercase = 0 #how many characters are uppercase
-    for i in range(0,4): #loop to save code
-        if firstChars[i].isupper(): #checks if character is uppercase
+    for c in firstChars: #loop to save code
+        if c.isupper(): #checks if character is uppercase
             amountUppercase += 1 #adds one to list of uppercase characters
     if amountUppercase >= 2: #checks if there are 2 or more uppercase characters
         return string.upper() #returns string in uppercase
@@ -67,3 +67,36 @@ shift = 4
 encode = caesarCipher(string, shift)
 decode = caesarDecipher(encode, shift)
 print(encode, "shift:", shift, decode)
+
+
+def countRepeat(string):
+    '''counts repeated characters in a string, returns dictionary'''
+    chars = {} # opens dictionary to store characters
+    for c in string: # iters through string
+        if c in chars: # checks if key exists in dictionary
+            chars[c] += 1 # if key exists then adds 1 to it
+        else:
+            chars[c] = 1 # if key does not exit then creates key
+    repeatChars = {} # opens dictionary to store repeated characters
+    for i in chars: # iters character dict
+        if chars[i] < 2:
+            # if charcter only appears once, skip
+            pass
+        else:
+            # if the character repeats multiple times,
+            # it will be added to the repeatedChars dict
+            repeatChars[i] = chars[i]
+    for i in repeatChars: # iters through repeated characters
+        print(i, repeatChars[i]) # prints repeated charcter and number of times it was repeated
+
+countRepeat(string)
+
+def strToList(string):
+    '''converts string to list'''
+    list = [] # opens list
+    for i in string: # iters through string
+        list.append(i) # appends to list
+    return list
+
+list = strToList(string)
+print(list)
