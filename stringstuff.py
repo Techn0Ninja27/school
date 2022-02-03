@@ -31,16 +31,25 @@ print(stringUpper(string))
 
 def caesarCipher(string, shift):
     '''simple caesar cipher'''
-    result = ""
-    string = string
-    for i in range(0,len(string)):
-        char = string[i]
+    result = "" #creates string for storing encrypted output
+    for i in range(0,len(string)): #loops for the length of the string
+        char = string[i] # obtains single character
 
-        if char == " ":
-            result += " "
-
-        elif char.isupper():
+        #if character is uppercase
+        if char.isupper():
             result += chr((ord(char) + shift - 65) % 26 + 65)
+            # ord() changes character into integer for its unicode value
+            # + shift adds the shift to the unicode value
+            # - 65 makes all characters be ordered alphabetically
+            # eg. E has a value of 45 in unicode HEX, but its integer value is
+            # 69, subtracting 65 from 69 returns 4, which is the position of # -*- coding: utf-8 -*-
+            # in the alphabet if counting from 0
+            #
+            # using the %(modulus) operator then makes the number not go over 26
+            # eg 28 % 26 returns 2, and 5 % 26 returns 5
+            # + 65 then makes the character go back to its original unicode value
+            # chr() then takes an integer and returns a character from unicode
+        #if character is lowercase
         else:
             result += chr((ord(char) + shift - 97) % 26 + 97)
 
