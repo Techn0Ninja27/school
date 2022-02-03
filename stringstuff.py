@@ -42,7 +42,7 @@ def caesarCipher(string, shift):
             # + shift adds the shift to the unicode value
             # - 65 makes all characters be ordered alphabetically
             # eg. E has a value of 45 in unicode HEX, but its integer value is
-            # 69, subtracting 65 from 69 returns 4, which is the position of # -*- coding: utf-8 -*-
+            # 69, subtracting 65 from 69 returns 4, which is the position of the character e
             # in the alphabet if counting from 0
             #
             # using the %(modulus) operator then makes the number not go over 26
