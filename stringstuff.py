@@ -34,9 +34,12 @@ def caesarCipher(string, shift):
     result = "" #creates string for storing encrypted output
     for i in range(0,len(string)): #loops for the length of the string
         char = string[i] # obtains single character
-
+        # if character is space
+        if char == " ":
+            # adds space to encrypted data
+            result += " "
         #if character is uppercase
-        if char.isupper():
+        elif char.isupper():
             result += chr((ord(char) + shift - 65) % 26 + 65)
             # ord() changes character into integer for its unicode value
             # + shift adds the shift to the unicode value
@@ -52,9 +55,15 @@ def caesarCipher(string, shift):
         #if character is lowercase
         else:
             result += chr((ord(char) + shift - 97) % 26 + 97)
-
     return result
 
-encode = caesarCipher(string, 26)
-decode = caesarCipher(string, 23)
-print(encode, decode)
+def caesarDecipher(string, shift):
+    '''decoder for caesar cipher'''
+    decodeShift = 26 - shift # creates shift to reshift a full cycle
+    decode = caesarCipher(string, decodeShift) # re-encrypts to decrypt
+    return decode
+
+shift = 4
+encode = caesarCipher(string, shift)
+decode = caesarDecipher(encode, shift)
+print(encode, "shift:", shift, decode)
