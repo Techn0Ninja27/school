@@ -71,8 +71,26 @@ encode = caesarCipher(string, shift)
 decode = caesarDecipher(encode, shift)
 print(encode, "shift:", shift, decode)
 
-
 # 4
+def stringStrip(string, characters):
+    '''strips list of characters from string'''
+    outputString = ""
+    for i in string:
+        inString = False
+        for c in characters:
+            if i == c:
+                inString = True
+        if inString == False:
+            outputString += i
+        else:
+            pass
+    return outputString
+
+stripChars = ["l", "g"]
+print(stringStrip(string, stripChars))
+
+
+# 5
 def countRepeat(string):
     '''counts repeated characters in a string, returns dictionary'''
     chars = {} # opens dictionary to store characters
@@ -95,7 +113,7 @@ def countRepeat(string):
 
 countRepeat(string)
 
-# 5
+# 6
 def strToList(string):
     '''converts string to list'''
     list = [] # opens list
