@@ -74,13 +74,14 @@ print(encode, "shift:", shift, decode)
 # 4
 def stringStrip(string, characters):
     '''strips list of characters from string'''
-    outputString = ""
-    for i in string:
-        inString = False
-        for c in characters:
-            if i == c:
-                inString = True
-        if inString == False:
+    outputString = "" # opens output string
+    for i in string: # iters through string
+        inString = False  # variable to check if character should be stripped
+        for c in characters: # iters through strip list
+            if i == c: # checks if string matches any characters from list
+                inString = True # changes variable to strip character
+        if inString == False: # if character is not to be stripped, it will be
+                              # it will be appended to output string
             outputString += i
         else:
             pass
