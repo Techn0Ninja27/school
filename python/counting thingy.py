@@ -36,7 +36,7 @@ class Temp:
         total2 = 0 # count for days where temp is over 20
         for i in range(self.days): # loops 100 times
             temp = float(input(f"Temperature for day {i+1}")) # input for temp
-            if temp < 20: # checks if temp is under 20
+            if temp <= 20: # checks if temp is under 20
                 self.total1 += 1 # adds 1 to count
             else: # if temp is not under 20
                 self.total2 += 1 # adds 1 to count2
@@ -65,7 +65,7 @@ def temp_count():
     total2 = 0 # count for days where temp is over 20
     for i in range(100): # loops 100 times
         temp = float(input(f"Temperature for day {i+1}")) # input for temp
-        if temp < 20: # checks if temp is under 20
+        if temp <= 20: # checks if temp is under 20
             total1 += 1 # adds 1 to count
         else: # if temp is not under 20
             total2 += 1 # adds 1 to count2
