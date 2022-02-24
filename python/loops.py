@@ -13,7 +13,7 @@ def userLoop():
             # code run while checking for errors
             loopMessage(input("message to loop"), int(
                 input("number of times to loop")))
-        except:
+        except ValueError:
             # run if error is found
             print("input error")
             continue

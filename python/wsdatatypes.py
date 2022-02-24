@@ -44,8 +44,10 @@ def carDetails():
     carInfo["color"] = input("Enter the color of your car")
     carInfo["age"] = input("Enter the age of your car")
     # print command to combine information into singular line
-    print("you have a", carInfo["make"], "its engine size is", carInfo["engine"],
-          "the color is", carInfo["color"], "it is", carInfo["age"], "years old")
+    print("you have a", carInfo["make"], "its engine size is",
+          carInfo["engine"],
+          "the color is", carInfo["color"], "it is", carInfo["age"],
+          "years old")
     return carInfo
 
 
