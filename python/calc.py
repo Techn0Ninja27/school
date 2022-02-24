@@ -5,6 +5,7 @@ def eqInput(message):
     inputted = float(input(message))
     return inputted
 
+
 def operationSelect(operations):
     """creates dialouge for user to select operation from list of operations"""
     print("Operations:")
@@ -12,6 +13,7 @@ def operationSelect(operations):
         print(x)
     operationSelected = str(input("Which operation?"))
     return operationSelected
+
 
 def calculate(no1, no2, operation):
     """calculates with two inputs and an operation"""
@@ -29,7 +31,8 @@ def calculate(no1, no2, operation):
     except:
         return "error"
 
-operationList = ["+","-","*","/","**"]
+
+operationList = ["+", "-", "*", "/", "**"]
 
 print("calculator")
 num1 = eqInput("first number")

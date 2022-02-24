@@ -1,13 +1,13 @@
 # 1
 def stringCutter(string):
     '''cuts string to 3 characters long'''
-    if len(string) <= 3: #check length of sting
+    if len(string) <= 3:  # check length of sting
         return string
     else:
-        return string[0:3] #return first 3 characters
+        return string[0:3]  # return first 3 characters
 
 
-string = "less goo!" #dababy
+string = "less goo!"  # dababy
 print(stringCutter(string))
 
 # 2
