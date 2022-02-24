@@ -16,3 +16,11 @@
 
 
 ---
+
+## OTHER STUFF
+
+All commented and labeled.
+
+- [x] [Tic Tac Toe in python](https://github.com/Techn0Ninja27/school/blob/main/python/tictactoe.py)
+
+---
