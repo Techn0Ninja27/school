@@ -129,7 +129,7 @@ def playerTurn(array, player):
                         # code run while checking for errors
                         x = int(input("X coordinate"))
                         y = int(input("Y coordinate"))
-                    except:
+                    except ValueError:
                         # run if error is found
                         print("Enter an Integer")
                         continue
@@ -171,7 +171,7 @@ def main():
             print("board size (counts from 0)")  # asks for board size
             boardx = int(input("X length"))
             boardy = int(input("Y length"))
-        except:
+        except ValueError:
             # run if error is found
             print("enter integer")
             continue

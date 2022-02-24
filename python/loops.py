@@ -8,7 +8,7 @@ def loopMessage(message, count):
 # 2
 def userLoop():
     loopFinish = False  # checks for user error
-    while loopFinish == False:  # looped until no error
+    while loopFinish is False:  # looped until no error
         try:
             # code run while checking for errors
             loopMessage(input("message to loop"), int(
@@ -27,12 +27,12 @@ def userLoop():
 def timestable():
     '''timestable generator'''
     loopFinish = False  # user error prevention
-    while loopFinish == False:  # loops to prevent user error
+    while loopFinish is False:  # loops to prevent user error
         try:
             # check for error
             times = int(input("enter times table you want"))
             limit = int(input("enter upper limit"))
-        except:
+        except ValueError:
             # if error
             print("input error")
             continue

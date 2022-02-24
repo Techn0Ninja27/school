@@ -1,13 +1,13 @@
 # 1 & 2 & 3
 def printInfo():
     loopFinish = False  # checks for user error
-    while loopFinish == False:  # looped until no error
+    while loopFinish is False:  # looped until no error
         try:
             # code run while checking for errors
             name = str(input("Name:"))  # input string
             age = float(input("Age:"))  # input float
             year = int(input("Year:"))  # input integer
-        except:
+        except ValueError:
             # run if error is found
             print("input error")
             continue

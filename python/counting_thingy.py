@@ -47,7 +47,8 @@ class Temp:
     def __str__(self):
         '''Outputs message with string'''
         # uses fstrings, {} indicates variables
-        message = f"Days under 20c: {self.total1}, Days over 20c: {self.total2}"
+        message = f"Days under 20c: {self.total1},"\
+                  f"Days over 20c: {self.total2}"
         return message
 
 

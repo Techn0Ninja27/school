@@ -2,13 +2,13 @@
 def ageCompare():
     '''compares two different ages'''
     loopFinish = False  # check for user error
-    while loopFinish == False:  # keeps input loop running until correct input
+    while loopFinish is False:  # keeps input loop running until correct input
         try:  # runs code and checks for error
             userName1 = str(input("enter name for person 1"))
             userAge1 = int(input("enter age for person 1"))
             userName2 = str(input("enter name for person 2"))
             userAge2 = int(input("enter age for person 2"))
-        except:
+        except ValueError:
             # run if error
             print("input error")
             continue
