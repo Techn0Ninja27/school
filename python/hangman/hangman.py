@@ -22,6 +22,8 @@ class Hangman:
                 elif i > self.wordNumber:
                     break
 
+        # removes newline
+        self.wordStr = self.wordStr.rstrip("\n")
         # turns word into list
         self.word = []
         for i in self.wordStr:
@@ -30,7 +32,6 @@ class Hangman:
         self.discovered = []
         for i in self.word:
             self.discovered.append("_")
-
         # the alphabet
         self.alphabetStr = "abcdefghijklmnopqrstuvwxyz"
         self.alphabetDict = {}
