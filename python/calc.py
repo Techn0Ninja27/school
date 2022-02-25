@@ -28,8 +28,10 @@ def calculate(no1, no2, operation):
             return no1/no2
         elif operation == "**":
             return no1**no2
-    except:
-        return "error"
+    except ZeroDivisionError:
+        return "Cannot divide by zero! >:("
+    except TypeError:
+        return "Error with Inputs!!!"
 
 
 operationList = ["+", "-", "*", "/", "**"]
