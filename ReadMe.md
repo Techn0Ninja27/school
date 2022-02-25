@@ -23,5 +23,5 @@ All commented and labeled.
 
 - [x] [Basic calculator](https://github.com/Techn0Ninja27/school/blob/main/python/calc.py)
 - [x] [Tic Tac Toe in python](https://github.com/Techn0Ninja27/school/blob/main/python/tictactoe.py)
-
+- [x] [Hangman in python](https://github.com/Techn0Ninja27/school/blob/main/python/hangman/hangman.py) Also the [word list](https://github.com/Techn0Ninja27/school/blob/main/python/hangman/words.txt)
 ---
