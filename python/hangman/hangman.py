@@ -1,14 +1,30 @@
+import random
 # hangman in python
+# obtains words from text file
+# text file is words.txt
 
 # maybe i will add a GUI
 
+
 class Hangman:
 
-    def __init__(self, word):
+    def __init__(self):
 
-        # word
+        # randomly chooses line for word
+        self.wordNumber = random.randint(0, 1000)
+
+        # opens text file
+        with open("words.txt", "r") as words:
+            for i, line in enumerate(words):
+                if i == self.wordNumber:
+                    # if the line is the same as the randomly chosen line
+                    self.wordStr = words.readline()
+                elif i > self.wordNumber:
+                    break
+
+        # turns word into list
         self.word = []
-        for i in word:
+        for i in self.wordStr:
             self.word.append(i)
 
         self.discovered = []
@@ -236,9 +252,12 @@ class Hangman:
                 else:
                     self.draw_man()
                     print("you lost")
+                    print("word was:")
+                    print(self.list_to_string(self.word).lower())
             else:
                 self.turn()
 
 
-hangman = Hangman("apple")
+hangman = Hangman()
+hangman.play()
 hangman.play()
