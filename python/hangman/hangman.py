@@ -152,6 +152,9 @@ class Hangman:
 
     def string_index_replace(self, string, index, replace):
         '''replaces an element at an index of a string'''
+        # basically this one just slices the string into whats before
+        # the index and whats after it. Then it joins them together with
+        # the element we want to place into that index
         newString = string[:index] + replace + string[index+1:]
         return newString
 
@@ -180,24 +183,31 @@ class Hangman:
 
     def letter_check(self):
         '''check letter against word'''
-        letter = self.letter_input()
+        letter = self.letter_input()  # first input for letter
 
         if letter in self.activePool:
+            # check if the letter is part of the active pool of letters
+
+            # removes letter from active pool and adds it to used pool
             self.activePool.pop(self.activePool.index(letter))
             self.usedPool.append(letter)
             if letter in self.word:
-                while letter in self.word:
-                    index = self.word.index(letter)
-                    self.word[index] = letter.upper()
+                # checks if the letter is part of the word
+                while letter in self.word:  # goes through the word
+                    index = self.word.index(letter)  # finds index for char
+                    self.word[index] = letter.upper()  # makes the index upper
+                    # adds to list of discovered
                     self.discovered[index] = letter
             else:
+                # if the letter is not part of the word
                 self.state += 1
         else:
             pass
-            # error message
 
     def draw_man(self):
         '''draws man according to state'''
+
+        # checks the state and prints the corresponding ascii art
         if self.state == 0:
             self.print_list(self.man0)
         elif self.state == 1:
@@ -216,7 +226,8 @@ class Hangman:
             self.print_list(self.man7)
 
     def win_check(self):
-        '''checks if player won'''
+        '''checks if player won, returns bool'''
+        # checks if there are any unfound letters
         if "_" in self.discovered:  # checks for blanks in finished word
             return False
         else:
@@ -225,39 +236,50 @@ class Hangman:
     def gameover_check(self):
         '''checks if game is over'''
         if self.win_check():
+            # checks for a win
             self.gameover = True
         elif self.state > 6:
+            # checks for a loss
             self.gameover = True
         else:
             pass
 
     def turn(self):
         '''single game iteration'''
+        # prints the characters found
         print(self.list_to_string(self.discovered))
+        # prints the guy
         self.draw_man()
         print()
+        # prints remaining letters
         print("Letters:")
         print(self.list_to_string(self.activePool))
         print()
+        # input for letter
         self.letter_check()
 
     def play(self):
         '''runs the game'''
+        # loop until game finished
         while self.gameover is False:
+            # checks for a gameover
             self.gameover_check()
             if self.gameover is True:
+                # if the game is over
                 if self.win_check():
+                    # if the player has won
                     print("YOU WON")
                     print("word was:", self.list_to_string(self.discovered))
                 else:
+                    # if the player loses
                     self.draw_man()
                     print("you lost")
                     print("word was:")
                     print(self.list_to_string(self.word).lower())
             else:
+                # if game isnt over, then repeat turns until game finish
                 self.turn()
 
 
 hangman = Hangman()
-hangman.play()
 hangman.play()
