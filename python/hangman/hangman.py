@@ -168,8 +168,10 @@ class Hangman:
             letter = str(input("LETTER: "))
             # changes input to be lowercase and only one char
             letter = letter.lower()
-            letter = letter[0]
-
+            try:
+                letter = letter[0]
+            except IndexError:
+                letter = " "
             # checks if letter is in active letter pool
             if letter in self.activePool:
                 failure = False
