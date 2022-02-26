@@ -283,6 +283,24 @@ class Hangman:
                 # if game isnt over, then repeat turns until game finish
                 self.turn()
 
+    def play_forever(self):
+        '''plays game on loop'''
+        while True:
+            self.play()
+            print()
+            while True:
+                playAgain = input("Would you like yo play again? y/n ")
+                if playAgain[0].lower() == "y":
+                    break
+                elif playAgain[0].lower() == "n":
+                    break
+                else:
+                    print("input y or n")
+            if playAgain[0].lower() == "y":
+                pass
+                self.__init__()
+            elif playAgain[0].lower() == "n":
+                break
 
 hangman = Hangman()
-hangman.play()
+hangman.play_forever()
