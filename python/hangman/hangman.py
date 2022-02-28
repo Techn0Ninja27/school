@@ -302,5 +302,6 @@ class Hangman:
             elif playAgain.lower() == "n":
                 break
 
+
 hangman = Hangman()
 hangman.play_forever()
