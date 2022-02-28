@@ -10,8 +10,11 @@ class Hangman:
 
     def __init__(self):
 
+        # Change depending on lines of words file
+        self.wordsLength = 1000
+
         # randomly chooses line for word
-        self.wordNumber = random.randint(0, 1000)
+        self.wordNumber = random.randint(0, self.wordsLength)
 
         # opens text file
         with open("words.txt", "r") as words:
